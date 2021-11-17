@@ -1,0 +1,103 @@
+body {
+    background:url(../images/moon-g96e412639_1920.jpg);
+    background-size: cover;
+    font-family: monospace;  
+    padding-left: 20em;
+    padding-right:20em ;
+    text-align: center;  
+    color: white;
+}
+/* Title */
+
+.title{
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+/* QUESTION / RESPONSES */
+
+.container {
+    margin-top: 6em;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* QUESTION */
+
+#question, #responses, #results > li{
+    backdrop-filter: blur(7px) saturate(161%);
+    -webkit-backdrop-filter: blur(7px) saturate(161%);
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    border: 2px solid rgba(209, 213, 219, 0.3);
+}
+
+#question {
+    padding: 2rem;
+    width: 50%;
+    margin-right:2em;
+}
+/* RESPONSES */
+
+#responses {
+     padding: 2rem; 
+    width: 50%;     
+}
+#responses-list{
+    display: flex;
+    flex-direction: column;
+}
+#responses-list > button {
+    /* removing default style of buttons */
+    width:100%;
+    text-align: center;
+    background: none;
+	color: inherit;
+	border: 1px black solid;
+    border-radius: 2em;
+    padding: 1em; 
+    margin: 0.5em;  
+}
+
+ #responses-list > button:hover {
+    background-color: white;
+    border: 3px white solid;
+    color: black;
+    text-align: center;
+  } 
+/* RIGHT ANSWER */
+ /*  #responses-list > li:hover {
+    background-color: rgb(20, 199, 35);
+  } */
+/* WRONG ANSWER */
+ /*    #responses-list > li:hover {
+    background-color: rgb(236, 42, 8);
+  }  */
+
+  /* remove the list of bullets  */
+ul {
+    list-style-type: none;
+  }
+
+#results {
+    margin-top: 6em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space space-around;
+    color: black;
+}
+
+#results > li{
+    margin-right:2em ;
+    padding: 1em;
+    width: 100%;
+    border-radius: 1em;
+    border: 1px solid none;
+    color: white;
+}
+
+/* #results > li :last-child{
+    margin-right:0 ;   
+} */
