@@ -64,7 +64,7 @@ let responses = [
 
 ];
 
-let wrongResponses1 = [
+let wrongResponses = [
     "Knee",
     "Iago",
     "Tin",
@@ -97,7 +97,7 @@ let wrongResponses1 = [
 
 ];
 
-let wrongResponses1 = [
+let wrongResponses2 = [
     "Knee",
     "Iago",
     "Tin",
