@@ -2,24 +2,23 @@
 const init = () => {
     console.log("lance le jeu bg");
     //recupération d'une question 
-    function askQuestion (questionIndex) {
-        question = questions[questionIndex];
-        return question;
+    //extraction d'un nombre aléatoir 
+    function getRandomQuestion (min, max) {
+        let step1 = max - min + 1;
+        let step2 = Math.random() * step1;
+        let ressult = Math.floor(step2) + min;
+
+        return ressult;
     }
 
-    let questionAsked = askQuestion (0); 
-    console.log(questionAsked);
-    //placer la question dans le DOM
-    function addQuestionToDOM(questionIndex) {
-     //Selection de l'id
-     let questionName = document.querySelector('#question-index');
-     //insertion
-      questionName.innerHTML = questions[questionIndex]; 
-      console.log(questionName );
+    function askQuestion () {
+        let questionName = document.querySelector('#question-index');
+        let question = getRandomQuestion(0,questions.length-1)
+        questionName.innerHTML = questions[question]; 
+        return questionName;
     }
 
-     let addedQuestionToDom = addQuestionToDOM(5); 
-    console.log(addedQuestionToDom); 
+    let questionAked =  askQuestion ();
 }
 
 init();
