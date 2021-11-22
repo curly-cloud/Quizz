@@ -1,28 +1,39 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    text-align:center; }
 body {
     background:pink;
     background-size: cover;
     font-family: monospace;  
-    padding-left: 20em;
-    padding-right:20em ;
-    text-align: center;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    /* padding-left: 20rem;
+    padding-right:20rem ;  */
     color: white;
 }
 /* Title */
 
-.title{
-    margin-top: 2em;
-    margin-bottom: 3em;
+.wraper {
+    width: auto;
+    width: 900px;
 }
 
 #quiz{
     /* text-transform: uppercase; */
+    margin-bottom: 1em; 
     font-size: 4rem; 
     font-weight: bold;}
 
 /* QUESTION / RESPONSES */
 
-.container {
-    margin-top: 6em;
+#container {
+     margin-bottom: 3em; ;
     display: flex;
     justify-content: space-around;
 }
@@ -33,6 +44,7 @@ body {
     font-size: 2em;
     line-height: 1.8em;
     font-weight: bold;
+  
 }
 
 #question, #responses, #results > li{
@@ -43,26 +55,33 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+#question, #responses{
+    padding: 3rem;
+}
 #question {
-    padding: 2rem;
     width: 50%;
-    margin-right:2em;
+    margin-right: 2em;
+    
 }
 /* RESPONSES */
 
 #responses {
-     padding: 2rem; 
     width: 50%;     
 }
-#responses-list{
+#choices{
     display: flex;
     flex-direction: column;
 }
-#responses-list > button {
+#choices > button:focus {
+    text-decoration: none;
+    outline:none;
+    border: none;
+    box-shadow: none;
+  }
+#choices > button {
     /* removing default style of buttons */
-    width:100%;
-    text-align: center;
+    /* width:100%;
+    text-align: center; */
     background: none;
 	color: inherit;
 	border: 1px white solid;
@@ -71,7 +90,7 @@ body {
     margin: 0.5em;  
 }
 
- #responses-list > button:hover {
+ #choices > button:hover {
     background-color: white;
     border: 3px white solid;
     color: black;
@@ -92,15 +111,16 @@ ul {
   }
 
 #results {
-    margin-top: 6em;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction: row;
     justify-content: space space-around;
     color: black;
 }
-
+/* progression page  */
+#progress-question{
+    font-size: 2em;
+    margin-bottom: 3em;
+}
 #results > li{
     margin-right:2em ;
     padding: 1em;
@@ -110,6 +130,5 @@ ul {
     color: white;
 }
 
-/* #results > li :last-child{
-    margin-right:0 ;   
-} */
+/* THEMES */
+

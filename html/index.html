@@ -13,28 +13,39 @@
         <div id="title">
             <h1 id="quiz">QuizZ</h1>
         </div>
-        <div class="container">
+        <div id="container">
         <div id="question">
             <p id="question-index"></p>   
         </div>
         <div id="responses">
-            <h2>The responses </h2>
-            <div id="responses-list">
-                <button type="button">second reponse  </button >   
-                <button type="button">first response</button >
-                <button type="button"> third response </button>
-                <button type="button">fourth response </button> 
+            <div id="choices">
+                <button id="guess0" type="button"> 
+                    <p id="choice0"></p>  
+                </button >   
+                <button id="guess1" type="button">
+                    <p id="choice1"></p>
+                </button >
+                <button id="guess2" type="button"> 
+                    <p id="choice2"></p>
+                </button>
+                <button id="guess3" type="button"> 
+                    <p id="choice3"></p>
+                </button> 
             </div>    
         </div>
      </div>
+     <div id="progress">
+        <p id="progress-question"></p>
+    </div>
      <ul id="results">
-         <li id="results-right">3 bonnes réponses</li>
-         <li id="results-wrong">5 mauvaises réponses</li>
-         <li id="results-score">score </li>
+         <li id="results-right"></li>
+         <li id="results-wrong"></li>
+         <li id="results-score"></li>
      </ul>
     </div>
     <!-- inclusion des fichiers JS -->
-    <script src="../js/data.js"></script>
+    <!-- <script src="../js/data.js"></script> -->
     <script src="../js/app.js"></script>
+    <!-- <script src="../js/app.js"></script> -->
 </body>
 </html>
