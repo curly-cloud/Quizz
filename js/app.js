@@ -179,7 +179,7 @@ class Quiz {
         const body = document.querySelector('body');
         /* console.log(body); */
         //modifier la classe du body 
-        body.classList.add(selectedTheme)
+        body.className = selectedTheme;
     }
 }
 
