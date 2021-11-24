@@ -180,7 +180,14 @@ class Quiz {
         /* console.log(body); */
         //modifier la classe du body 
         body.className = selectedTheme;
+        //Stocker le cookie 
+        //thème modifié => création du cookie pour stocker son nom 
+        //le cookie dispose d'un nom et d'une valeur et d'autres options 
+        //qu'on peut lui ajouter : domaine, date d'expiration..
+        //max-age = nombre de seconde dans une annéé
+        document.cookie="theme-choisi="+ selectedTheme + ";max-age=31536000"
     }
+
 }
 
 //les fonctions qui affichent l'app
@@ -242,14 +249,31 @@ progress: function() {
     console.log(themeSelect); 
  },
 
-/*  handleChangeSelect: function(){
+ loadtheme:function(){
+     //verification si il y a un cookie 
+     //si différent de vide
+     if(document.cookie != ""){
+    //recupération du coockie 
+    //split casse une chaine de caratère en tableau
+    const cookieTheme = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('theme-choisi='))
+    .split('=')[1];
     
-},  */
+    //recuperation de la balise body 
+    const body = document.querySelector('body');
+    body.className = cookieTheme;
+    console.log(cookieTheme);
+}
+}
 
 }
 
 //le fonctionnement du quiZ (init)
 quizApp = ()=> {
+    //dès le chargement de la page on verifie que l'utilisateur
+    //n'a pas selectionné un thème grace à ses cookies
+    display.loadtheme();
     if (quiz.hasEnded()){
         //fin de jeu 
         display.endQuiz();
