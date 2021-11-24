@@ -169,6 +169,18 @@ class Quiz {
     hasEnded(){
         return this.currentQuestionIndex >= this.questions.length;
     }
+
+    handleChangeSelect(event){
+        //récupérer la valeur dans le select "cibl du select"
+        //target = cible événement = le thème
+        const selectedTheme= event.target.value;
+        /* console.log(selectTheme); */
+        //recupérer la balise body 
+        const body = document.querySelector('body');
+        /* console.log(body); */
+        //modifier la classe du body 
+        body.classList.add(selectedTheme)
+    }
 }
 
 //les fonctions qui affichent l'app
@@ -180,7 +192,7 @@ elementshown : function (id,text) {
 endQuiz: function () {
     let endQuizTitle=`<h1>Le jeu est terminé bg j'espère que t'as dead ça </h1>`
     let endQuizHTML = ` 
-    <h3> Score : ${quiz.score} /${quiz.questions.length}</h3>
+    <h3 > Score : ${quiz.score} /${quiz.questions.length}</h3>
      `;
      let endQuizWA = ` 
     <h3> Wrong answers: ${quiz.wrongAnswer} /${quiz.questions.length} </h3> `;
@@ -221,14 +233,27 @@ progress: function() {
     //on prend l'index 0 + 1
     let currentQuestionNumber = quiz.currentQuestionIndex +1;
     this.elementshown("progress-question", "Question " + currentQuestionNumber + "/" + quiz.questions.length)
-}
+},
+
+//changement de theme
+ theme: function() {
+    const themeSelect = document.querySelector("#select-menu");
+    themeSelect.addEventListener('change', quiz.handleChangeSelect);
+    console.log(themeSelect); 
+ },
+
+/*  handleChangeSelect: function(){
+    
+},  */
+
 }
 
-//le fonctionnement du quiZ
+//le fonctionnement du quiZ (init)
 quizApp = ()=> {
     if (quiz.hasEnded()){
         //fin de jeu 
         display.endQuiz();
+        
     }else{
       //on affiche la question
       display.question();
@@ -236,9 +261,16 @@ quizApp = ()=> {
       display.choices();
       //progression dans les questions 
       display.progress () ;
+      //changement du theme
+        display.theme();
     }
+    
+
 }
 
+// Pour etre sur que notre code JS se lance bien APRÈS le chargement complet de la page, on place un écouteur sur celle-ci pour surveiller l'événement DOMContentLoaded. Ce dernier est émis par le navigateur lorsque toutes les ressources de la page sont bien téléchargées.
+// Quand tout est téléchargé, on lance la fonction init ! 
+document.addEventListener('DOMContentLoaded', quizApp);
 //create quiz (creation objet quiz)
 let quiz =  new Quiz(questions);
 quizApp();
