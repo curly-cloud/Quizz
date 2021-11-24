@@ -4,17 +4,25 @@
     margin: 0;
     padding:0;
     text-align:center;
-    font-family: monospace; 
+    font-family: monospace;
+     
    
  }
-body{
-    display: var(--display-flex);
-    align-items: var(--align-items);
-    justify-content: var( --justify-content);
-    height: var(--height);
-    background:var(--color-background);
+ html{
+    --background:pink;
+    --color-font:rgb(99, 96, 96);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    --hover : black;
+    --hover-border:white;
+ }
+ body{
+    background:var(--background-color);
     
-}
+    
+} 
 /* Title */
 
 .wraper {
@@ -123,7 +131,7 @@ ul {
 
 /* THEMES */
 
-.pink {
+/*  body .pink {
     --color-background:pink;
     --color-font:white;
     --display-flex: flex;
@@ -132,26 +140,25 @@ ul {
     --height: 100vh;
     --hover : rgb(10, 10, 10);
     --hover-border:white;
-}
+} */
 
 .dark {
-    --color-background:black;
+    --background-color:black;
     --color-font:white;
-    --display-flex: flex;
-    --align-items: center;
-    --justify-content: center;
-    --height: 100vh;
     --hover : black;
     --hover-border:white;
 }
 
-.light {
-    --color-background:white;
-    --color-font:black;
-    --display-flex: flex;
-    --align-items: center;
-    --justify-content: center;
-    --height: 100vh;
-    --hover :white;
-    --hover-border:black;
-} 
+.pink {
+   --background-color:pink;
+   --color-font:white;
+    --hover :pink;
+    --hover-border:white;
+}  
+
+.purple {
+    --background-color:rgb(58, 5, 83);
+    --color-font:white;
+     --hover :rgb(58, 5, 83);
+     --hover-border:white;
+ } 
