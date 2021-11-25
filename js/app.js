@@ -7,6 +7,7 @@ class Question {
     //si le choix de la réponse est bonne
     //on renvoie vrai 
     isCorrectAnswer(choice) {
+        
         return this.answer === choice;
         
       }
@@ -199,7 +200,7 @@ elementshown : function (id,text) {
 endQuiz: function () {
     let endQuizTitle=`<h1>Le jeu est terminé bg j'espère que t'as dead ça </h1>`
     let endQuizHTML = ` 
-    <h3 > Score : ${quiz.score} /${quiz.questions.length}</h3>
+    <h3> Score : ${quiz.score} /${quiz.questions.length}</h3>
      `;
      let endQuizWA = ` 
     <h3> Wrong answers: ${quiz.wrongAnswer} /${quiz.questions.length} </h3> `;

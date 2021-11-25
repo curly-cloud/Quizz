@@ -122,25 +122,48 @@ ul {
     margin-bottom: 3em;
 }
 #results > li{
-    margin-right:2em ;
-    padding: 1em;
-    width: 100%;
-    border-radius: 1em;
-    border: 1px solid none;
+    margin-right:var(--margin-right) ;
+    padding: var(--padding);
+    width: var(--width);
+    border-radius: var(--border-radius);
+    border: var(--border);
+}
+#select-menu {
+    color: var(--color-font);
+   border:  none;
+   background: none;
+   font-weight: bold;
+   font-size: 1.5em;
 }
 
-/* THEMES */
-
-/*  body .pink {
-    --color-background:pink;
-    --color-font:white;
-    --display-flex: flex;
-    --align-items: center;
-    --justify-content: center;
-    --height: 100vh;
-    --hover : rgb(10, 10, 10);
-    --hover-border:white;
+select:focus{
+    text-decoration: none;
+    outline:none;
+    border: none;
+    box-shadow: none;
+}
+ #menu-themes{
+    --margin-right:2em ;
+    --padding: 1em;
+    --width: 100%;
+    --border-radius: 1em;
+    --border: 1px solid none; 
+}
+#results-wrong,#results-score{
+    --margin-right:2em ;
+    --padding: 1em;
+    --width: 100%;
+    --border-radius: 1em;
+    --border: 1px solid none; 
+}
+/* #hide-results-wrong,#hide-results-score{
+    --margin-right:none ;
+    --padding: none;
+    --width: none;
+    --border-radius: none;
+    --border:  none; 
 } */
+/* THEMES */
 
 .dark {
     --background-color:black;
