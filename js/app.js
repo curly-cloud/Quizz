@@ -14,7 +14,8 @@ class Question {
       
      isNotCorrectAnswer(choice) {
         return this.answer !== choice;
-    } 
+    }
+
 }
 let questions = [
 new Question (
@@ -139,7 +140,7 @@ new Question (
     ["Corn","Rice","wheat","Quinoa"],
     "Rice")
 ];
-console.log(questions);
+/* console.log(questions); */
 
 class Quiz {
 
@@ -150,12 +151,14 @@ class Quiz {
         //mauvaises question 
         this.wrongAnswer = 0;  
         //index du tableau
-        this.currentQuestionIndex=0;
+        this.currentQuestionIndex= 0;
     }
 
     //affichage de la question 
     getCurrentquestion(){
+        
         return this.questions[this.currentQuestionIndex];
+        
     }
     //Si la reponse est bonne on incrémente 
     guess(answer) {
@@ -189,6 +192,7 @@ class Quiz {
         document.cookie="theme-choisi="+ selectedTheme + ";max-age=31536000"
     }
 
+    
 }
 
 //les fonctions qui affichent l'app
@@ -213,8 +217,10 @@ endQuiz: function () {
 },
 
 question: function(){
-    this.elementshown("question-index",quiz.getCurrentquestion().text)
+    this.elementshown("question-index",quiz.getCurrentquestion().text);
+    
 },
+
 choices: function(){
     //le choix ds reponse se fait par rapport a la question 
     //les 4 élemnts des reponses 
@@ -247,7 +253,7 @@ progress: function() {
  theme: function() {
     const themeSelect = document.querySelector("#select-menu");
     themeSelect.addEventListener('change', quiz.handleChangeSelect);
-    console.log(themeSelect); 
+    /* console.log(themeSelect);  */
  },
 
  loadtheme:function(){
@@ -264,12 +270,43 @@ progress: function() {
     //recuperation de la balise body 
     const body = document.querySelector('body');
     body.className = cookieTheme;
-    console.log(cookieTheme);
+    /* console.log(cookieTheme); */
 }
-}
+},
 
-}
+chrono: function(){
+    //démarrer le compteur 
+    let counter = 30 ;
+    //recupération de l'id où intégrer le chrono
+    let timerElement = document.querySelector('#chrono-text'); 
+    //creation du compteur 
+    //avec setInterval qui a besoin d'une fonction et de sa durée
+    const timer = setInterval(function countDown() {
+        console.log( counter);
+        //ajout de texte du counter
+    timerElement.innerHTML= counter;
+        counter = counter -1;
+        if (counter === 0) {
+            //attendre 1 seconde avant d'afficher le texte
+            setTimeout(() => {
+                timerElement.innerHTML= "it's over baby";
+                //arrete de l'intervale à 0
+                clearInterval(timer);    
+            },1000);
+            /* counter=0;
+            timerElement.innerHTML = counter;
+            if(timerElement.innerHTML == "0"){
+                chrono();
+            } */
+        }
+    }, 1000);
 
+    //arreter le timer 
+    /*  */
+    }, 
+
+ }
+ 
 //le fonctionnement du quiZ (init)
 quizApp = ()=> {
     //dès le chargement de la page on verifie que l'utilisateur
@@ -288,6 +325,7 @@ quizApp = ()=> {
       display.progress () ;
       //changement du theme
         display.theme();
+        /* display.chrono(); */
     }
     
 

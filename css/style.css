@@ -23,6 +23,14 @@
     
     
 } 
+
+#chrono{
+    right: 0;
+    
+}
+#chrono-text{
+    font-size: 3em; 
+}
 /* Title */
 
 .wraper {
