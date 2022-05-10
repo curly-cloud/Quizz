@@ -1,10 +1,8 @@
 
 # QUIZZZZZ
-<h1 align="center">
-  <br>
+
   <img src="![Capture d’écran 2022-05-10 à 04 04 23](https://user-images.githubusercontent.com/70054073/167528128-20574d2a-3cea-4ce0-9644-b06a2848388f.png)
-" alt="Markdownify" width="200">
-</h1>
+" alt="Quizz" width="200">
 
 Welcome to my quizz application. 
 I set up this little QUIZZ in order to work on the arrays and improve the use of classes ! 
